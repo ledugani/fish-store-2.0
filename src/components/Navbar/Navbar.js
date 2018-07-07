@@ -5,9 +5,11 @@ import './Navbar.css';
 
 class Navbar extends React.Component {
   render () {
+    const {authed} = this.props;
+
     return (
       <div className="Navbar">
-        <nav className="navbar navbar-default">
+        <nav className="navbar navbar-inverse">
           <div className="container-fluid">
             <div className="navbar-header">
               <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -19,11 +21,24 @@ class Navbar extends React.Component {
               <Link to="/" className="navbar-brand">Fishy Fish Store</Link>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul className="nav navbar-nav navbar-right">
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
-              </ul>
+              {
+                authed ? (
+                  <ul className="nav navbar-nav navbar-right">
+                    <li>
+                      <Link to="/inventory">Inventory</Link>
+                    </li>
+                    <li>
+                      <Link to="/orders">Orders</Link>
+                    </li>
+                  </ul>
+                ) : (
+                  <ul className="nav navbar-nav navbar-right">
+                    <li>
+                      <Link to="/login">Login</Link>
+                    </li>
+                  </ul>
+                )
+              }
             </div>
           </div>
         </nav>
