@@ -13,6 +13,8 @@ import Inventory from '../components/Inventory/Inventory';
 // import OrderSpa from '../components/OrderSpa/OrderSpa';
 import Register from '../components/Register/Register';
 // import SingleOrder from '../components/SingleOrder/SingleOrder';
+import fbConnection from '../firebaseRequests/connection';
+fbConnection();
 
 const PrivateRoute = ({ component: Component, authed, ...rest}) => {
   return (
