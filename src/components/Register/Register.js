@@ -7,13 +7,13 @@ import './Register.css';
 class Register extends React.Component {
   state={
     user: {
-      email: '',
-      password: '',
+      email: 'tom@tom.com',
+      password: 'password',
     },
   };
 
-  registerClickEvent = (e) => {
-    const {user} = this.state;
+  registerClickEvent = e => {
+    const { user } = this.state;
     e.preventDefault();
     authRequests
       .registerUser(user)
@@ -21,20 +21,20 @@ class Register extends React.Component {
         this.props.history.push('/orders');
       })
       .catch((errr) => {
-        console.error('there was an error with register', errr);
+        console.error('there was an error in registering', errr);
       })
   };
 
-  emailChange = (e) => {
+  emailChange = e => {
     const tempUser = {...this.state.user};
     tempUser.email = e.target.value;
-    this.setState({user: tempUser});
+    this.setState({ user: tempUser });
   };
 
-  passwordChange = (e) => {
-    const tempUser = {...this.state.user};
+  passwordChange = e => {
+    const tempUser = { ...this.state.user };
     tempUser.password = e.target.value;
-    this.setState({user: tempUser});
+    this.setState({ user: tempUser });
   };
 
   render () {
@@ -43,12 +43,12 @@ class Register extends React.Component {
       <div className="Register">
         <div id="login-form">
           <h1 className="text-center">Register</h1>
-          <form className="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+          <form className="form-horizontal col-sm-4 col-sm-offset-6 col-xs-offset-3">
             <div className="form-group">
               <label htmlFor="inputEmail" className="col-sm-2 control-label">
-                Email
+                Email:
               </label>
-              <div className="col-sm-10">
+              <div className="col-sm-8">
                 <input
                   type="email"
                   className="form-control"
@@ -60,10 +60,10 @@ class Register extends React.Component {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="inputPassword" className="col-sm-2 control-label">
-                Password
+              <label htmlFor="inputPassword" className="col-sm-4 control-label">
+                Password:
               </label>
-              <div className="col-sm-10">
+              <div className="col-sm-8">
                 <input
                   type="password"
                   className="form-control"
@@ -75,12 +75,12 @@ class Register extends React.Component {
               </div>
             </div>
             <div className="form-group">
-              <div className="col-sm-offset-2 col-sm-10 text-center">
+              <div className="col-sm-offset-12 text-center">
                 <Link to="/login">Need to Login?</Link>
               </div>
             </div>
             <div className="form-group">
-              <div className="col-sm-offset-2 col-sm-10">
+              <div className="col-sm-offset-12">
                 <button
                   type="submit"
                   className="btn btn-default col-xs-12"
