@@ -4,10 +4,10 @@
   border: 1rem double $black;
   background: $white;
   transition: all 0.3s;
-  box-shadow: 0 5px 5px $black;
+  box-shadow: 10px 10px 5px gray;
   overflow: scroll;
   padding-top: 15px;
-  height: 90vh;
+  height: 80vh;
 
   .new-button {
     margin-bottom: 20px;
