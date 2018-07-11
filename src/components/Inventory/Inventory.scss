@@ -4,8 +4,8 @@
   border: 1rem double $black;
   background: $white;
   transition: all 0.3s;
-  box-shadow: 0 5px 5px $black;
+  box-shadow: 10px 10px 5px gray;
   overflow: scroll;
-  height: 90vh;
+  height: 80vh;
   padding-top: 15px;
 }

@@ -21,4 +21,17 @@ const getRequest = (uid) => {
   });
 };
 
-export default { getRequest };
+const postRequest = (newOrder) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .post(`${constants.firebaseConfig.databaseURL}/orders.json`, newOrder)
+      .then((results) => {
+        resolve(results);
+      })
+      .catch((errr) => {
+        reject(errr);
+      })
+  })
+};
+
+export default { getRequest, postRequest };
